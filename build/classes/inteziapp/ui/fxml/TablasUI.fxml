@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="inteziapp.ui.TablasUIController"
+            prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #fff;">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="25">
+            <padding>
+                <Insets top="24" left="32" right="32" bottom="18"/>
+            </padding>
+            <Button fx:id="btnVolver" style="-fx-background-color: transparent;" focusTraversable="false">
+                <graphic>
+                    <ImageView fitHeight="38.0" fitWidth="38.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/flechaIzquierda.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <HBox fx:id="hboxUsuario" alignment="CENTER_LEFT" spacing="8">
+                <ImageView fx:id="imgAvatar" fitHeight="52.0" fitWidth="54.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/usuario.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="lblUsuario" style="-fx-font-family: 'Inter'; -fx-font-size: 20px; -fx-text-fill: #707070;" text="usuario" />
+            </HBox>
+            <Button fx:id="btnMenu" style="-fx-background-color: transparent;" focusTraversable="false" prefHeight="32" prefWidth="32">
+                <graphic>
+                    <ImageView fitHeight="22.0" fitWidth="22.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/menu.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Region HBox.hgrow="ALWAYS"/>
+            <ImageView fx:id="logoView" fitHeight="40" fitWidth="160" preserveRatio="true">
+                <image>
+                    <Image url="@../images/Logo-Intezia.jpg"/>
+                </image>
+            </ImageView>
+        </HBox>
+    </top>
+
+    <!-- CENTER (tabla) -->
+    <center>
+        <VBox alignment="CENTER" spacing="16">
+            <TableView fx:id="tabla" editable="true" prefHeight="520" prefWidth="1150" style="-fx-font-size:16px;"/>
+            <HBox alignment="CENTER" spacing="8">
+                <Button fx:id="btnAgregarFila" text="Agregar Fila"/>
+                <Button fx:id="btnEliminarFila" text="Eliminar Fila"/>
+                <Button fx:id="btnAgregarColumna" text="Agregar Columna"/>
+                <Button fx:id="btnEliminarColumna" text="Eliminar Columna"/>
+                <Button fx:id="btnGuardar" text="Guardar"/>
+                <Label fx:id="lblEstado" style="-fx-font-size:14px; -fx-text-fill:#888;"/>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

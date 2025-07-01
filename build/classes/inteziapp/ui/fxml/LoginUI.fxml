@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane prefHeight="650" prefWidth="400" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inteziapp.ui.LoginUIController">
+
+    <VBox alignment="CENTER" maxHeight="550" maxWidth="347.0" prefHeight="547.0" prefWidth="347.0" spacing="0" style="-fx-background-color: white; -fx-background-radius: 45; -fx-padding: 32 24 32 24;" styleClass="main-panel">
+
+        <!-- Botón X en la esquina superior izquierda del bloque blanco -->
+        <HBox alignment="TOP_LEFT" prefHeight="30" prefWidth="347.0">
+            <Button fx:id="btnSalir" focusTraversable="false" prefHeight="28" prefWidth="28" style="-fx-background-color: transparent">
+                <graphic>
+                    <ImageView fx:id="iconoSalida" fitHeight="25" fitWidth="25" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/equis.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+
+        <ImageView fx:id="logoView" fitHeight="60" fitWidth="130" pickOnBounds="true" preserveRatio="true">
+              <image>
+                  <Image url="@../images/Logo-Intezia.jpg" />
+              </image>
+        </ImageView> 
+
+        <Label style="-fx-font-family: 'Inter SemiBold', 'Arial'; -fx-font-size: 18px; -fx-padding: 16 0 8 0;" styleClass="label-bold-large" text="Login:" />
+
+        <!-- Subpanel para campos -->
+        <AnchorPane maxWidth="299.0" prefHeight="264.0" prefWidth="299.0" style="-fx-background-color: #F8F6F6; -fx-background-radius: 30; -fx-padding: 22 18 22 18;" styleClass="fields-panel">
+
+            <!-- Usuario -->
+            <StackPane alignment="CENTER_RIGHT" layoutX="32.0" layoutY="24.0" prefHeight="36" prefWidth="230">
+                <TextField fx:id="txtUsuario" prefHeight="26.0" prefWidth="206.0" promptText="usuario@intezia.com" styleClass="text-field-login" />
+            </StackPane>
+
+            <!-- Contraseña + Ojo -->
+            <StackPane alignment="CENTER_RIGHT" layoutX="32.0" layoutY="110.0" prefHeight="51.0" prefWidth="230.0">
+                <PasswordField fx:id="txtClaveOculta" prefHeight="26.0" prefWidth="211.0" promptText="contraseña" styleClass="text-field-login" />
+                <TextField fx:id="txtClaveVisible" managed="false" prefWidth="230" promptText="contraseña" styleClass="text-field-login" visible="false" />
+                <Button fx:id="btnToggleClave" focusTraversable="false" style="-fx-background-color: transparent;" styleClass="ojo-btn" StackPane.alignment="CENTER_RIGHT">
+                    <graphic>                        
+                        <ImageView fx:id="iconoOjo" fitHeight="18" fitWidth="18" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/eyeball-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </StackPane>
+
+            <Label fx:id="lblStatus" layoutX="35.0" layoutY="200.0" prefWidth="230" style="-fx-text-fill: #C94D4D; -fx-font-size: 13px;" text="" wrapText="true" />
+
+        </AnchorPane>
+
+        <!-- Espacio -->
+        <Pane maxHeight="42.0" minHeight="12" prefHeight="42.0" prefWidth="299.0" />
+
+        <!-- Botón Ingresar -->
+        <Button fx:id="btnLogin" defaultButton="true" style="-fx-background-radius: 15;" styleClass="login-button" text="Ingresar" />
+        <Label fx:id="lblOlvidarClave" style="-fx-font-size: 13px; -fx-padding: 7 0 0 0; -fx-underline: true; -fx-text-fill: #888; -fx-cursor: hand;" styleClass="olvidar-clave-label" text="¿Olvidaste tu clave?" />
+    </VBox>
+</StackPane>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0"
+    xmlns="http://javafx.com/javafx/23.0.1"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="inteziapp.ui.ReunionUIController"
+    style="-fx-background-color: #ffffff;">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="25" style="-fx-background-color: transparent;" BorderPane.alignment="TOP_LEFT">
+            <padding>
+                <Insets bottom="18" left="32" right="32" top="24" />
+            </padding>
+            <!-- Botón volver -->
+            <Button fx:id="btnVolver" onAction="#volver" style="-fx-background-color: transparent;" focusTraversable="false">
+                <graphic>
+                    <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/flechaIzquierda.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <!-- Avatar usuario -->
+            <HBox fx:id="hboxUsuario" alignment="CENTER_LEFT" spacing="8">
+                <ImageView fx:id="imgAvatar" fitHeight="52.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/usuario.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="lblUsuario" style="-fx-font-family: 'Inter'; -fx-font-size: 20px; -fx-text-fill: #707070;" text="usuario" />
+            </HBox>
+            <!-- Menú -->
+            <Button fx:id="btnMenu" focusTraversable="false" prefHeight="32" prefWidth="32" style="-fx-background-color: transparent;">
+                <graphic>
+                    <ImageView fitHeight="42" fitWidth="42" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/menu.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Region HBox.hgrow="ALWAYS" />
+            <!-- Logo InteZIA -->
+            <ImageView fx:id="logoView" fitHeight="40" fitWidth="160" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../images/Logo-Intezia.jpg" />
+                </image>
+            </ImageView>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox alignment="TOP_CENTER" spacing="60">
+            <padding>
+                <Insets top="60" left="60" right="60" bottom="0" />
+            </padding>
+            <!-- Grid de usuarios -->
+            <VBox alignment="TOP_CENTER" spacing="18">
+                <!-- Se crea programáticamente en el controlador -->
+                <GridPane fx:id="gridUsuarios" hgap="32" vgap="18" />
+            </VBox>
+            <!-- Derecha: Selección y botón -->
+            <VBox alignment="TOP_CENTER" spacing="40" prefWidth="500">
+                <Label text="Selecciona usuarios a agendar"
+                    style="-fx-font-family: 'Inter Semibold'; -fx-font-size: 26px; -fx-text-fill: #888; -fx-underline: true;" />
+                <StackPane fx:id="areaSeleccionados"
+                    prefWidth="420" prefHeight="200"
+                    style="-fx-background-color: #f8f6f6; -fx-background-radius: 50;" />
+                <Button fx:id="btnAgendar" text="Agendar Reunión"
+                    prefHeight="58" prefWidth="320"
+                    style="-fx-font-family: 'Inter Semibold'; -fx-font-size: 28px; -fx-background-color: #DDD; -fx-background-radius: 20; -fx-text-fill: #111; -fx-effect: dropshadow(gaussian, #aaa, 7, 0.3, 4, 8);" />
+                <Label fx:id="lblEstado" text="" style="-fx-font-size: 18px; -fx-text-fill: #72b568; -fx-font-family: 'Inter Semibold';" />
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

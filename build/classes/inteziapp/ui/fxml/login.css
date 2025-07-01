@@ -1,0 +1,80 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 1, 2025, 9:24:59 PM
+    Author     : chris
+*/
+
+/* Panel principal blanco, borde 45 */
+.main-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 45;
+    -fx-padding: 32 24 32 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 16, 0, 0, 6);
+    -fx-alignment: center;
+}
+
+/* Subpanel gris, borde 30 */
+.fields-panel {
+    -fx-background-color: #F8F6F6;
+    -fx-background-radius: 30;
+    -fx-padding: 22 18 22 18;
+    -fx-spacing: 10;
+}
+
+/* Login grande y negrita */
+.label-bold-large {
+    -fx-font-family: 'Inter SemiBold', 'Arial';
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-text-alignment: center;
+    -fx-text-fill: #222;
+}
+
+/* Textfields: solo línea inferior */
+.text-field-login {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: transparent transparent #444 transparent;
+    -fx-font-size: 13px;
+    -fx-padding: 8 30 6 6;
+    -fx-text-fill: #444;
+    -fx-prompt-text-fill: #aaa;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+/* Botón Ingresar */
+.login-button {
+    -fx-background-color: #e4e4e4;
+    -fx-background-radius: 15;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 34 8 34;
+    -fx-effect: dropshadow(gaussian, rgba(120,120,120,0.12), 8, 0, 0, 2);
+    -fx-text-fill: #222;
+    -fx-cursor: hand;
+}
+
+/* Olvidaste tu clave */
+.olvidar-clave-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #888;
+    -fx-padding: 7 0 0 0;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+/* Botón de ojo (mostrar/ocultar) */
+.ojo-btn {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 0 0 0 0;
+}
+
+/* Para que todo lo externo sea transparente */
+.root, .stack-pane {
+    -fx-background-color: transparent;
+}

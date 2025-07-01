@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="720" prefWidth="1280" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inteziapp.ui.DashboardUIController">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="25" style="-fx-background-color: transparent;" BorderPane.alignment="TOP_LEFT">
+            <padding>
+                <Insets bottom="18" left="32" right="32" top="24" />
+            </padding>
+
+            <!-- Avatar de usuario -->
+            <HBox fx:id="hboxUsuario" alignment="CENTER_LEFT" spacing="8">
+                <ImageView fx:id="imgAvatar" fitHeight="52.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/usuario.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="lblUsuario" style="-fx-font-family: 'Inter'; -fx-font-size: 20px; -fx-text-fill: #707070;" text="usuario" />
+            </HBox>
+
+            <!-- Menú -->
+            <Button fx:id="btnMenu" focusTraversable="false" prefHeight="32" prefWidth="32" style="-fx-background-color: transparent;">
+                <graphic>
+                    <ImageView fitHeight="42" fitWidth="42" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/menu.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <!-- Spacer -->
+            <Region HBox.hgrow="ALWAYS" />
+
+            <!-- Logo InteZIA a la derecha -->
+            <ImageView fx:id="logoView" fitHeight="40" fitWidth="160" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../images/Logo-Intezia.jpg" />
+                </image>
+            </ImageView>
+        </HBox>
+    </top>
+
+    <!-- LEFT: Gráfico y resumen -->
+    <left>
+        <VBox spacing="20" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="0" left="45" right="0" top="32" />
+            </padding>
+            <!-- Imagen de gráfico (puedes cambiar por gráfico real después) -->
+            <ImageView fx:id="imgGrafico" fitHeight="421.0" fitWidth="378.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../images/grafico.png" />
+                </image>
+            </ImageView>
+            <VBox prefHeight="58.0" prefWidth="453.0" spacing="3">
+                <padding>
+                    <Insets bottom="0" left="0" right="0" top="8" />
+                </padding>
+                <Label style="-fx-font-family: 'Inter Semibold'; -fx-font-size: 16px; -fx-text-fill: #888;" text="JULIO:" />
+                <Label style="-fx-font-family: 'Inter'; -fx-font-size: 15px; -fx-text-fill: #888;" text="Aumento en ventas: 23%" />
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- CENTER: Actividad y previews -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="14">
+            <padding>
+                <Insets bottom="0" left="10" right="32" top="32" />
+            </padding>
+            <Label style="-fx-font-family: 'Inter Semibold'; -fx-font-size: 20px; -fx-text-fill: #707070;" text="Actividad Reciente:" />
+            
+            <!-- Grid para previews de actividad (4 cuadros) -->
+            <GridPane fx:id="gridActividadReciente" alignment="CENTER" hgap="24" prefHeight="158.0" prefWidth="739.0" vgap="18">
+                <padding>
+                    <Insets bottom="0" left="0" right="0" top="8" />
+                </padding>
+                <!-- Tarjetas de actividad reciente -->
+                <StackPane minHeight="98" minWidth="120" style="-fx-background-color: #F8F6F6; -fx-background-radius: 26;" />
+                <StackPane minHeight="98" minWidth="120" prefHeight="122.0" prefWidth="120.0" style="-fx-background-color: #F8F6F6; -fx-background-radius: 26;" GridPane.columnIndex="1" />
+                <StackPane minHeight="98" minWidth="120" style="-fx-background-color: #F8F6F6; -fx-background-radius: 26;" GridPane.columnIndex="2" />
+                <StackPane minHeight="98" minWidth="120" style="-fx-background-color: #F8F6F6; -fx-background-radius: 26;" GridPane.columnIndex="3" />
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+
+            <!-- Previews grandes de Tablas, Reportes, Reuniones -->
+            <GridPane fx:id="gridPreviews" alignment="TOP_CENTER" hgap="40" vgap="10">
+            <padding>
+                <Insets bottom="0" left="0" right="0" top="28" />
+            </padding>
+            <!-- Tablas -->
+            <VBox alignment="TOP_CENTER" spacing="6" GridPane.columnIndex="0">
+                <Label fx:id="lblTablas" style="-fx-font-family: 'Inter Semibold'; -fx-font-size: 17px; -fx-text-fill: #707070; -fx-underline: true;" text="Tablas" />
+                <StackPane fx:id="previewTablas" minHeight="130" minWidth="140" style="-fx-background-color: transparent;">
+                    <ImageView fx:id="imgTablas" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
+                </StackPane>
+            </VBox>
+            <!-- Reportes -->
+            <VBox alignment="TOP_CENTER" spacing="6" GridPane.columnIndex="1">
+                <Label fx:id="lblReportes" style="-fx-font-family: 'Inter Semibold'; -fx-font-size: 17px; -fx-text-fill: #707070; -fx-underline: true;" text="Reportes" />
+                <StackPane fx:id="previewReportes" minHeight="130" minWidth="140" style="-fx-background-color: transparent;">
+                    <ImageView fx:id="imgReportes" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
+                </StackPane>
+            </VBox>
+            <!-- Reuniones -->
+            <VBox alignment="TOP_CENTER" spacing="6" GridPane.columnIndex="2">
+                <Label fx:id="lblReuniones" style="-fx-font-family: 'Inter Semibold'; -fx-font-size: 17px; -fx-text-fill: #707070; -fx-underline: true;" text="Reuniones" />
+                <StackPane fx:id="previewReuniones" minHeight="130" minWidth="140" style="-fx-background-color: transparent;">
+                    <ImageView fx:id="imgReuniones" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
+                </StackPane>
+            </VBox>
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+        </VBox>
+    </center>
+
+    <!-- Puedes agregar <bottom> si lo necesitas -->
+
+</BorderPane>
